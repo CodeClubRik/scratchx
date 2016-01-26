@@ -8,6 +8,7 @@ new (function() {
 
     ext.recognize_speech = function (callback) {
         var recognition = new webkitSpeechRecognition();
+        recognition.lang = "en-GB";
         recognition.onresult = function(event) {
             if (event.results.length > 0) {
                 recognized_speech = event.results[0][0].transcript;
